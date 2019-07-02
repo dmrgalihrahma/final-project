@@ -1,6 +1,7 @@
 package com.example.damar.finalproject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,7 +28,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class KlasifikasiActivity extends AppCompatActivity implements StepperLayout.StepperListener {
     private static final String TAG = "Klasifikasi";
@@ -84,17 +90,22 @@ public class KlasifikasiActivity extends AppCompatActivity implements StepperLay
         Log.e(TAG, "onCompleted: " + DatabaseHelper.HASIL);
         for (int i = 0; i < DatabaseHelper.HASIL.size(); i++) {
             int value = (int) DatabaseHelper.HASIL.get(i);
-            if (value == 2131165239) {
+            if (value == 2131165240) {
                 DatabaseHelper.AUDITORI += 1;
-            } else if (value == 2131165240) {
+            } else if (value == 2131165241) {
                 DatabaseHelper.VISUAL += 1;
             } else {
                 DatabaseHelper.KINESTETIK += 1;
             }
         }
+
         int a = DatabaseHelper.AUDITORI, v = DatabaseHelper.VISUAL, k = DatabaseHelper.KINESTETIK;
-        if (a > v && a > k) {
-            Toast.makeText(getApplicationContext(), "Anak itu Auditori", Toast.LENGTH_SHORT).show();
+        if (a > k && a > v) {
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","Auditori");
+            startActivity(intent);
+
+
         } else if (v > a && v > k) {
             Toast.makeText(getApplicationContext(), "Anak itu Visual", Toast.LENGTH_SHORT).show();
         } else if (k > a && k > v) {
