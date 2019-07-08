@@ -1,20 +1,44 @@
 package com.example.damar.finalproject.Hasil;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.damar.finalproject.HistoryActivity;
+import com.example.damar.finalproject.MainActivity;
 import com.example.damar.finalproject.R;
+import com.example.damar.finalproject.database.SQLiteDatabaseHandler;
+import com.example.damar.finalproject.model.History;
+
+import java.util.Date;
 
 public class Kinestetik1 extends AppCompatActivity {
     public TextView metode1, metode2, metode3, keterangan1, keterangan2, keterangan3;
     String hasil1 = "Metode Beyond Center and Circle Time (BCCT)";
-    String ket1 = "bla bla bla";
+    String ket1 = "BCCT yaitu konsep belajar dimana guru-guru menghadirkan dunia nyata ke dalam kelas dan mendorong siswa membuat hubungan antara pengetahuan yang dimiliki dengan penerapannya dalam kehidupan mereka sehari-hari.\n";
     String hasil2 = "Metode Latihan";
-    String ket2 = "bla bla bla";
+    String ket2 = "Metode latihan keterampilan (drill method) adalah suatu metode mengajar dengan memberikan pelatihan keterampilan secara berulang kepada peserta didik, dan mengajaknya langsung ketempat latihan keterampilan untuk melihat proses tujuan, fungsi, kegunaan dan manfaat sesuatu (misal: membuat tas dari mute).\n";
     String hasil3 = "Metode Kubus Pecah";
-    String ket3 = "bla bla bla";
+    String ket3 = "Metode Broken Square yaitu cara penyusunan pecahan–pecahan Bujur sangkar yang dilakukan oleh empat atau lima kelompok menjadi bentuk bujur sangkar.\n";
+
+    AlertDialog.Builder dialog;
+    LayoutInflater inflater;
+    View dialogView;
+    EditText txt_nama;
+    TextView txt_hasil;
+    String nama;
+    Button btn_simpan;
+
+    private SQLiteDatabaseHandler db;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,11 +52,68 @@ public class Kinestetik1 extends AppCompatActivity {
         keterangan3 = (TextView) findViewById(R.id.txt_ket3);
 
         metode1.setText("1. "+hasil1);
-        keterangan1.setText("keterangan: "+ket1);
+        keterangan1.setText(""+ket1);
         metode2.setText("2. "+hasil2);
-        keterangan2.setText("keterangan: "+ket2);
+        keterangan2.setText(""+ket2);
         metode3.setText("3. "+hasil3);
-        keterangan3.setText("keterangan: "+ket3);
+        keterangan3.setText(""+ket3);
 
+        db = new SQLiteDatabaseHandler(this);
+
+        btn_simpan = findViewById(R.id.btn_simpan);
+        btn_simpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialogForm();
+            }
+        });
+    }
+
+    private void dialogForm () {
+
+        Log.d("mbarang", "onClick: klik");
+        dialog = new AlertDialog.Builder(this, R.style.myDialog);
+        inflater = getLayoutInflater();
+        dialogView = inflater.inflate(R.layout.dialog_template, null);
+        dialog.setView(dialogView);
+        dialog.setCancelable(true);
+        dialog.setIcon(R.mipmap.ic_launcher);
+        dialog.setTitle("Form Nama");
+
+        txt_nama = (EditText) dialogView.findViewById(R.id.input_nama);
+
+        dialog.setPositiveButton("Simpan", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                nama = txt_nama.getText().toString();
+
+                Date tanggal = new Date();
+                History player1 = new History(1, nama, "Kinestetik", "metodebelajar");
+                db.addHistory(player1);
+
+                dialogInterface.dismiss();
+
+                Intent intent = new Intent(getApplicationContext(),HistoryActivity.class);
+                startActivity(intent);
+            }
+        }).create();
+
+        dialog.setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+
+            }
+        });
+
+        dialog.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

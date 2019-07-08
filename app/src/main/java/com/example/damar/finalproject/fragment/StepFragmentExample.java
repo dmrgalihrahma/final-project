@@ -55,10 +55,10 @@ public class StepFragmentExample extends Fragment implements Step {
                     @Override
                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                         RadioButton checkedRadioButton = (RadioButton) view.findViewById(i);
-                        String text = String.valueOf(checkedRadioButton.getId())+" "+String.valueOf(bundle.getInt(MyStepperAdapter.CURRENT_STEP_POSITION_KEY));
-                        DatabaseHelper.HASIL.put(bundle.getInt(MyStepperAdapter.CURRENT_STEP_POSITION_KEY), i);
-                        Log.d(ContentValues.TAG, "text " + text);
-                        Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+//                        String text = String.valueOf(checkedRadioButton.getId())+" "+String.valueOf(bundle.getInt(MyStepperAdapter.CURRENT_STEP_POSITION_KEY));
+                        DatabaseHelper.HASIL.put(bundle.getInt(MyStepperAdapter.CURRENT_STEP_POSITION_KEY), checkedRadioButton.getHint());
+                        Log.d(ContentValues.TAG, "text " + checkedRadioButton.getHint());
+//                        Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -93,9 +93,9 @@ public class StepFragmentExample extends Fragment implements Step {
             Klasifikasi kl0 = lk.get(0);
             Klasifikasi kl1 = lk.get(1);
             Klasifikasi kl2 = lk.get(2);
-            mRadioButton1.setText(kl0.getKlasifikasi() + " " + kl0.getKategori_id());
-            mRadioButton2.setText(kl1.getKlasifikasi() + " " + kl1.getKategori_id());
-            mRadioButton3.setText(kl2.getKlasifikasi() + " " + kl2.getKategori_id());
+            mRadioButton1.setText(kl0.getKlasifikasi());
+            mRadioButton2.setText(kl1.getKlasifikasi());
+            mRadioButton3.setText(kl2.getKlasifikasi());
         }
 
         return view;

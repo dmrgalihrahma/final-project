@@ -89,10 +89,10 @@ public class KlasifikasiActivity extends AppCompatActivity implements StepperLay
     public void onCompleted(View completeButton) {
         Log.e(TAG, "onCompleted: " + DatabaseHelper.HASIL);
         for (int i = 0; i < DatabaseHelper.HASIL.size(); i++) {
-            int value = (int) DatabaseHelper.HASIL.get(i);
-            if (value == 2131165240) {
+            String value = (String) DatabaseHelper.HASIL.get(i);
+            if (value.equals("0")) {
                 DatabaseHelper.AUDITORI += 1;
-            } else if (value == 2131165241) {
+            } else if (value.equals("1")) {
                 DatabaseHelper.VISUAL += 1;
             } else {
                 DatabaseHelper.KINESTETIK += 1;
@@ -105,17 +105,31 @@ public class KlasifikasiActivity extends AppCompatActivity implements StepperLay
             intent.putExtra("pesan","Auditori");
             startActivity(intent);
 
-
         } else if (v > a && v > k) {
-            Toast.makeText(getApplicationContext(), "Anak itu Visual", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","Visual");
+            startActivity(intent);
+
         } else if (k > a && k > v) {
-            Toast.makeText(getApplicationContext(), "Anak itu Kinestetik", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","Kinestetik");
+            startActivity(intent);
+
         } else if (a == k && a > v) {
-            Toast.makeText(getApplicationContext(), "Anak itu AudioKinestetik", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","AudioKinestetik");
+            startActivity(intent);
+
         } else if (a == v && a > k) {
-            Toast.makeText(getApplicationContext(), "Anak itu AudioVisual", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","AudioVisual");
+            startActivity(intent);
+
         } else if (v == k && v > a) {
-            Toast.makeText(getApplicationContext(), "Anak itu VisualKinestetik", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), HasilKlasifikasi.class);
+            intent.putExtra("pesan","VisualKinestetik");
+            startActivity(intent);
+
         } else {
             Toast.makeText(getApplicationContext(), "Anak itu Gataudah", Toast.LENGTH_SHORT).show();
         }
@@ -131,8 +145,8 @@ public class KlasifikasiActivity extends AppCompatActivity implements StepperLay
     public void onStepSelected(int newStepPosition) {
         mRadioGroup = stepperLayout.findViewById(R.id.radioGroupWrapper);
         mRadioGroup.getCheckedRadioButtonId();
-        Toast.makeText(this, "onStepSelected! -> " + newStepPosition +" " +
-                ""+mRadioGroup.getCheckedRadioButtonId(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onStepSelected! -> " + newStepPosition +" " +
+//                ""+mRadioGroup.getCheckedRadioButtonId(), Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onReturn() {

@@ -26,7 +26,7 @@ public class Visual2Activity extends AppCompatActivity {
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         text = (TextView) findViewById(R.id.question);
-        q1 = "Apakah anak cenderung lebih bisa menerima materi dengan belajar di dalam ruangan (Indoor) atau di luar ruangan (Outdoor)?";
+        q1 = "Apakah anak cenderung lebih suka belajar dengan permainan atau tidak?";
         text.setText(q1);
         btn1.setText("Dengan Permainan");
         btn2.setText("Tanpa Permainan");

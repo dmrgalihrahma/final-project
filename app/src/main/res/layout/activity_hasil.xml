@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
@@ -10,20 +14,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Saran Metode Belajar"
-        android:textSize="18dp"
+        android:textSize="20dp"
         android:padding="10dp"/>
 
     <TextView
         android:id="@+id/txt_metode1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
         android:text="" />
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/txt_ket1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
         android:text=""
         android:paddingBottom="10dp"/>
 
@@ -31,13 +36,14 @@
         android:id="@+id/txt_metode2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
          />
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/txt_ket2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
         android:paddingBottom="10dp"
          />
 
@@ -45,13 +51,14 @@
         android:id="@+id/txt_metode3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
          />
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/txt_ket3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
         android:paddingBottom="10dp"
         />
 
@@ -59,13 +66,14 @@
         android:id="@+id/txt_metode4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
         />
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/txt_ket4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
         android:paddingBottom="10dp"
         />
 
@@ -73,27 +81,45 @@
         android:id="@+id/txt_metode5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:textSize="18dp"
         />
 
-    <TextView
+    <me.biubiubiu.justifytext.library.JustifyTextView
         android:id="@+id/txt_ket5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="15dp"
         android:paddingBottom="10dp"
+        android:scrollbars = "vertical"
         />
 
     <TextView
         android:id="@+id/txt_metode6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18dp"
+        />
+
+    <me.biubiubiu.justifytext.library.JustifyTextView
+        android:id="@+id/txt_ket6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="15dp"
         />
 
-    <TextView
-        android:id="@+id/txt_ket6"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:gravity="bottom|center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_simpan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"/>
+
+    </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

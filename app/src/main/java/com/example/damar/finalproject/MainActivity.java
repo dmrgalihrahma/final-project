@@ -3,13 +3,22 @@ package com.example.damar.finalproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.damar.finalproject.database.SQLiteDatabaseHandler;
+import com.example.damar.finalproject.model.History;
 import com.example.damar.finalproject.model.Klasifikasi;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btn_konsulMetode, btn_konsultasi, btn_metode, btn_history, btn_help;
+
+    private SQLiteDatabaseHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +59,18 @@ public class MainActivity extends AppCompatActivity {
                 openKonsulMetode();
             }
         });
+
+        db = new SQLiteDatabaseHandler(this);
+
+//        History player1 = new History(1, "Lebron James", "F", "jagd");
+//        History player2 = new History(2, "Kevin Durant", "F", "da");
+//        History player3 = new History(3, "Rudy Gobert", "C", "da");
+//
+//        db.addHistory(player1);
+//        db.addHistory(player2);
+//        db.addHistory(player3);
+
+
     }
     public void openKonsultasi(){
         Intent intent = new Intent(this, KlasifikasiActivity.class);
@@ -71,4 +92,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
+
 }

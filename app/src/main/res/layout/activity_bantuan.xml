@@ -4,16 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="15dp"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="BANTUAN"
         android:fontFamily="sans-serif"
         android:textStyle="bold"
         android:textSize="20dp"
+        android:paddingBottom="10dp"
         android:textColor="@color/black"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:paddingBottom="20dp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:text="Aplikasi CharLearning merupakan aplikasi yang dibangun untuk menentukan metode belajar anak berdasarkan klasifikasi karakter yang sesuai dengan anak."/>
+
+
+
 
 </LinearLayout>

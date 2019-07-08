@@ -31,19 +31,22 @@
                    android:buttonTint="@color/black"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Option 1"/>
+                   android:text="Option 1"
+                   android:hint="0"/>
                <RadioButton
                    android:id="@+id/checkbox2"
                    android:buttonTint="@color/black"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Option 2"/>
+                   android:text="Option 2"
+                   android:hint="1"/>
                <RadioButton
                    android:id="@+id/checkbox3"
                    android:buttonTint="@color/black"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:text="Option 3"/>
+                   android:text="Option 3"
+                   android:hint="2"/>
            </RadioGroup>
        </android.support.v7.widget.CardView>
    </LinearLayout>

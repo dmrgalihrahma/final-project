@@ -24,6 +24,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.support.constraint.Constraints.TAG;
+
 public class ListKlasifikasiAdapter extends RecyclerView.Adapter<ListKlasifikasiAdapter.KlasifikasiViewHolder> {
     private Context mContext;
     private List<Klasifikasi> mKlasifikasiList;

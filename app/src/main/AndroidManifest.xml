@@ -42,8 +42,9 @@
         <activity android:name=".Menu.Visual2Activity" />
         <activity android:name=".Menu.KinestetikActivity" />
         <activity android:name=".Menu.AudioKinestetikActivity" />
-        <activity android:name=".Menu.VisualKinestetikActivity"></activity>
-        <activity android:name=".HasilKlasifikasi"></activity>
+        <activity android:name=".Menu.VisualKinestetikActivity" />
+        <activity android:name=".HasilKlasifikasi" />
+        <activity android:name=".RiwayatActivity"></activity>
     </application>
 
 </manifest>

@@ -4,23 +4,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"/>
 
-        <TextView
-            android:id="@+id/txtNamaMetode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Damar" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtKeteranganMetode"
-        android:layout_width="match_parent"
-        android:layout_height="116dp"
-        android:layout_marginBottom="10dp"
-        android:text="riwayat" />
 
 </LinearLayout>
