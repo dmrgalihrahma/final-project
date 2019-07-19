@@ -29,7 +29,7 @@ public class HasilActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil);
 
-        Log.d("mbarang", "onClick: klik");
+//        Log.d("mbarang", "onClick: klik");
         btn_simpan = findViewById(R.id.btn_simpan);
         btn_simpan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,14 +41,14 @@ public class HasilActivity extends AppCompatActivity implements View.OnClickList
 
     private void dialogForm () {
 
-        Log.d("mbarang", "onClick: klik");
+//        Log.d("mbarang", "onClick: klik");
         dialog = new AlertDialog.Builder(HasilActivity.this);
         inflater = getLayoutInflater();
         dialogView = inflater.inflate(R.layout.dialog_template, null);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
-        dialog.setIcon(R.mipmap.ic_launcher);
-        dialog.setTitle("Form Nama");
+        dialog.setIcon(R.drawable.logo);
+        dialog.setTitle("Simpan");
         dialog.show();
 
         txt_nama = (EditText) dialogView.findViewById(R.id.input_nama);

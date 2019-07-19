@@ -26,6 +26,8 @@ public class HasilKlasifikasi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil_klasifikasi);
+        this.setTitle("Hasil Klasifikasi");
+
         TextView textView = (TextView) findViewById(R.id.hasil_klasifikasi);
         Button button = (Button) findViewById(R.id.btn_metodebelajar);
         Intent intent = getIntent();

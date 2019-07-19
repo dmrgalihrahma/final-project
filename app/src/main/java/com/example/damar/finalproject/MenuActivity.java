@@ -22,6 +22,8 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        this.setTitle("Konsultasi Metode");
+
         auditori = (Button) findViewById(R.id.btn_auditori);
         auditori.setOnClickListener(new View.OnClickListener() {
             @Override

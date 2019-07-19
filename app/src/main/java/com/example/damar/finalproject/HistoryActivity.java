@@ -27,6 +27,7 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        this.setTitle("Riwayat");
 
         db = new SQLiteDatabaseHandler(this);
 

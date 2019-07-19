@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@drawable/bg_pict"
     tools:context=".HasilKlasifikasi">
 
     <TextView
@@ -21,13 +22,23 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:gravity="bottom|center"
+        android:paddingBottom="100dp"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:paddingBottom="10dp"
+            android:text="Catatan: Hasil akan semakin akurat apabila pengisian klasifikasi karakter tepat."/>
 
         <Button
             android:id="@+id/btn_metodebelajar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Metode Belajar" />
+            android:background="@drawable/button2_bg"
+            android:textColor="@color/white"
+            android:text=" Metode Belajar " />
 
     </LinearLayout>
 

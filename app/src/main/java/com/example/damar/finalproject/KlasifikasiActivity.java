@@ -49,6 +49,7 @@ public class KlasifikasiActivity extends AppCompatActivity implements StepperLay
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_klasifikasi);
+        this.setTitle("Klasifikasi Karakter");
 
         stepperLayout = findViewById(R.id.stepperLayout);
         stepperLayout.setAdapter(new MyStepperAdapter(getSupportFragmentManager(), this));

@@ -26,8 +26,7 @@ public class AudioKinestetik2 extends AppCompatActivity {
     String hasil1 = "Metode Debat Aktif";
     String ket1 = "Metode debat merupakan salah satu metode pembelajaran yang sangat penting untuk meningkatkan kemampuan akademik siswa. Materi ajar dipilih dan disusun menjadi paket pro dan kontra.\n";
     String hasil2 = "Metode Pair Checks";
-    String ket2 = "Model pembelajaran pair check merupakan model pembelajaran berkelompok yang saling berpasangan yang dipopulerkanoleh Spencer Kagan pada tahun 1990.\n" +
-            "Model ini menerapkan pembelajaran kooperatif yang menuntut kemandirian dan kemampuan siswa dalam menyelesaikan persoalan. Model ini juga melatih tanggung jawab sosial siswa, kerja sama, dan kemampuan memberi penilaian.\n";
+    String ket2 = "Model ini menerapkan pembelajaran kooperatif yang menuntut kemandirian dan kemampuan siswa dalam menyelesaikan persoalan. Model ini juga melatih tanggung jawab sosial siswa, kerja sama, dan kemampuan memberi penilaian.\n    Sedangkan, model cooperative learning tipe paircheck adalah modifikasi dari tipe think pairs share, dimana penekanan pembelajaran ada pada saat mereka diminta untuk saling cek jawaban atau tanggapan terhadap pertanyaan guru saat berada dalam pasangan.\n";
 
     AlertDialog.Builder dialog;
     LayoutInflater inflater;
@@ -43,6 +42,8 @@ public class AudioKinestetik2 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil);
+        this.setTitle("Audio-Kinestetik");
+
         metode1 = (TextView) findViewById(R.id.txt_metode1);
         keterangan1 = (TextView) findViewById(R.id.txt_ket1);
         metode2 = (TextView) findViewById(R.id.txt_metode2);
@@ -72,8 +73,8 @@ public class AudioKinestetik2 extends AppCompatActivity {
         dialogView = inflater.inflate(R.layout.dialog_template, null);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
-        dialog.setIcon(R.mipmap.ic_launcher);
-        dialog.setTitle("Form Nama");
+        dialog.setIcon(R.drawable.logo);
+        dialog.setTitle("Simpan");
 
         txt_nama = (EditText) dialogView.findViewById(R.id.input_nama);
 
@@ -83,7 +84,7 @@ public class AudioKinestetik2 extends AppCompatActivity {
                 nama = txt_nama.getText().toString();
 
                 Date tanggal = new Date();
-                History player1 = new History(1, nama, "Auditori", "metodebelajar");
+                History player1 = new History(1, nama, "Audio-Kinestetik", "metodebelajar");
                 db.addHistory(player1);
 
                 dialogInterface.dismiss();

@@ -27,6 +27,8 @@ public class MetodeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metode);
+        this.setTitle("Metode Belajar");
+
         lvMetode = (ListView)findViewById(R.id.listview_metode);
         mDBHelper = new DatabaseHelper(this);
 

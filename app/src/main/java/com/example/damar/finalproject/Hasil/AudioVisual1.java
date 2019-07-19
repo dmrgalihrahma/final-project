@@ -48,6 +48,8 @@ public class AudioVisual1 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hasil);
+        this.setTitle("Audio-Visual");
+
         metode1 = (TextView) findViewById(R.id.txt_metode1);
         keterangan1 = (TextView) findViewById(R.id.txt_ket1);
         metode2 = (TextView) findViewById(R.id.txt_metode2);
@@ -89,8 +91,8 @@ public class AudioVisual1 extends AppCompatActivity {
         dialogView = inflater.inflate(R.layout.dialog_template, null);
         dialog.setView(dialogView);
         dialog.setCancelable(true);
-        dialog.setIcon(R.mipmap.ic_launcher);
-        dialog.setTitle("Form Nama");
+        dialog.setIcon(R.drawable.logo);
+        dialog.setTitle("Simpan");
 
         txt_nama = (EditText) dialogView.findViewById(R.id.input_nama);
 

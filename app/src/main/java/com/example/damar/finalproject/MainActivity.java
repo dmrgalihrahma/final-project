@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Menu Utama");
 
         btn_konsultasi = (ImageButton) findViewById(R.id.btn_konsultasi);
         btn_konsultasi.setOnClickListener(new View.OnClickListener() {
